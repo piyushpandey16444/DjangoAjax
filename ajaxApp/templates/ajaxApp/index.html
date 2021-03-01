@@ -30,9 +30,16 @@
 
     $("#of__form").on('submit', (e) => {
         e.preventDefault();
+        console.log($(this).serializeArray())
+        
         // raed form data
-        const value = $(this).serializeArray()
-        console.log("current obj: ",  $(this).serializeArray())
+        //const valuesInArray = $(this).serializeArray()
+        //const body = {}
+        //valuesInArray.reduce((body, e) => {
+        //    body[e.name] = e.value
+        //    return body
+        //}, body)
+        //console.log(body)
         // sending data to server using ajax
     })
 
