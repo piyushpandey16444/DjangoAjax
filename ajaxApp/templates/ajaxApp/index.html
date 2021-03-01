@@ -11,35 +11,36 @@
 <body>
     <div>
         <br>
-        <form id="of__form" action="#">
+        <form id="of__form" action="#" method="POST">
             <h1>Office Form</h1>
             {{oform.as_p}}
-            <input type="submit" value="Save Office">
+            <button type="submit" value="Save Office">Save Office</button>
         </form>
         <hr>
         
-        <form id="emp__form" action="#">
+        <form id="emp__form" action="#" method="POST">
             <h1>Employee Form</h1>
             {{eform.as_p}}
-            <input type="submit" value="Save Employee">
+            <button type="submit" value="Save Employee">Save Employee</button>
         </form>
     </div>
 </body>
 
 <script>
 
-    $("#of__form").on('submit', (e) => {
+    $("#of__form").submit((e) => {
         e.preventDefault();
-        console.log($(this).serializeArray())
-        
+
         // raed form data
-        //const valuesInArray = $(this).serializeArray()
-        //const body = {}
-        //valuesInArray.reduce((body, e) => {
-        //    body[e.name] = e.value
-        //    return body
-        //}, body)
-        //console.log(body)
+        const valuesInArray = $(this).serializeArray()
+        const body = {}
+        valuesInArray.reduce((body, e) => {
+            body[e.name] = e.value
+            return body
+        }, body)
+
+        console.log(body)
+
         // sending data to server using ajax
     })
 
