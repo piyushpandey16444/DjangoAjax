@@ -27,11 +27,21 @@
 </body>
 
 <script>
-    $('#of__form').on('submit', function(event){
-        event.preventDefault();
-        alert("Was preventDefault() called: " + event.isDefaultPrevented());
-        // console.log("form submitted!");
+
+    $("#of__form").on('submit', (e) => {
+        e.preventDefault();
+        // raed form data
+        const value = $(this).serializeArray()
+        console.log("current obj: ",  $(this).serializeArray())
+        // sending data to server using ajax
     })
+
+    $("#emp__form").on('submit', (e) => {
+        e.preventDefault();
+        // raed form data
+        // sending data to server using ajax
+    })
+    
 </script>
 
 </html>
