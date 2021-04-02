@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" 
-    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-        <br>
-        <form id="of__form" action="#" method="POST">
-            <h1>Office Form</h1>
-            {{oform.as_p}}
-            <button type="submit" value="Save Office">Save Office</button>
-        </form>
-        <hr>
-        
-        <form id="emp__form" action="#" method="POST">
-            <h1>Employee Form</h1>
-            {{eform.as_p}}
-            <button type="submit" value="Save Employee">Save Employee</button>
-        </form>
+      <br />
+      <form id="of__form" action="#" method="POST">
+        <h1>Office Form</h1>
+        {{oform.as_p}}
+        <button type="submit" value="Save Office">Save Office</button>
+      </form>
+      <hr />
+
+      <form id="emp__form" action="#" method="POST">
+        <h1>Employee Form</h1>
+        {{eform.as_p}}
+        <button type="submit" value="Save Employee">Save Employee</button>
+      </form>
     </div>
-</body>
+  </body>
 
-<script>
-
+  <script>
     $("#of__form").submit((e) => {
-        e.preventDefault();
+      e.preventDefault();
 
-        // raed form data
-        const valuesInArray = $(this).serializeArray()
-        const body = {}
-        valuesInArray.reduce((body, e) => {
-            body[e.name] = e.value
-            return body
-        }, body)
+      // raed form data
+      const valuesInArray = $(this).serializeArray();
+      const body = {};
+      valuesInArray.reduce((body, e) => {
+        body[e.name] = e.value;
+        return body;
+      }, body);
 
-        console.log(body)
+      console.log(body);
 
-        // sending data to server using ajax
-    })
+      // sending data to server using ajax
+    });
 
-    $("#emp__form").on('submit', (e) => {
-        e.preventDefault();
-        // raed form data
-        // sending data to server using ajax
-    })
-    
-</script>
-
+    $("#emp__form").on("submit", (e) => {
+      e.preventDefault();
+      // raed form data
+      // sending data to server using ajax
+    });
+  </script>
 </html>
